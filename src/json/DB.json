@@ -1,0 +1,5 @@
+[
+    {"id":1,"categoria":"guitarra","marca":"Shecter","modelo":"Omen6", "img":"https://http2.mlstatic.com/D_NQ_NP_678051-MLA31018988781_062019-O.webp","precio":1200},
+    {"id":2,"categoria":"bajo","marca":"Ibanez","modelo":"Rouas", "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1h6falLdu68J_0q9p1-miol49fF_Hzg3HA&usqp=CAU","precio":1900},
+    {"id":3,"categoria":"bateria","marca":"Zilgian","modelo":"r38","img":"https://www.dombel.com.ar/834-large_default/bateria-musical-acustica-5-cuerpos-shelter.jpg","precio":2200 }
+]

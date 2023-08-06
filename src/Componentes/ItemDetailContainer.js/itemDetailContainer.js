@@ -1,7 +1,7 @@
 
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
-import DB from '../../json/DB.json'
+import {getFirestore,doc,getDoc} from 'firebase/firestore'
 import ItemDetail from "../ItemDetail/itemDetail"
 
 const ItemDetailContainer = ()=>{
@@ -9,13 +9,9 @@ const ItemDetailContainer = ()=>{
  const {id} = useParams()
 
  useEffect(()=>{
-
-    let peticion =  new Promise((resolve)=>{
-        resolve(DB.find(e=>e.id == parseInt(id)))
-    })
-    peticion.then(data=>{
-        setItem(data)
-    })
+    const documentos = doc(getFirestore(),'deposito','911K2HbBAMfJgArHBIt2')
+    getDoc(documentos)
+    .then(res => setItem(({id:res.id,...res.data()})))
     
     
 },[id])

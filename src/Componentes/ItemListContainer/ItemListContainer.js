@@ -1,7 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
-import DB from '../../json/DB.json'
+import { getFirestore,collection,getDocs } from "firebase/firestore";
 import ItemList from "../ItemList/itemList";
 
 const ItemListContainer = ()=>{
@@ -10,14 +10,10 @@ const ItemListContainer = ()=>{
     let {id} = useParams()
     
     useEffect(()=>{
-        let peticion =  new Promise((resolve)=>{
-            resolve(id?DB.filter(e=>e.categoria === id):DB)
-        })
-        peticion.then(data=>{
-            setItem(data)
-        })
         
-        
+        const collections = collection(getFirestore(),'deposito')
+        getDocs(collections)
+        .then(res => setItem(res.docs.map(e=>({id:e.id,...e.data()}))))
     },[id])
     
     console.log(item);

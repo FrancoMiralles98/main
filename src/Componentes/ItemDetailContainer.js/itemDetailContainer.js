@@ -9,14 +9,15 @@ const ItemDetailContainer = ()=>{
  const {id} = useParams()
 
  useEffect(()=>{
-    const documentos = doc(getFirestore(),'deposito','911K2HbBAMfJgArHBIt2')
+   
+    const documentos = doc(getFirestore(),'deposito',`${id}`)
     getDoc(documentos)
     .then(res => setItem(({id:res.id,...res.data()})))
     
     
 },[id])
 
-    console.log('llega',item);
+
     return (
         <div className="container">
             <ItemDetail item={item}/>

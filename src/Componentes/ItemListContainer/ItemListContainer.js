@@ -10,13 +10,14 @@ const ItemListContainer = ()=>{
     let {id} = useParams()
     
     useEffect(()=>{
-        
+        console.log(id);
         const collections = collection(getFirestore(),'deposito')
         getDocs(collections)
         .then(res => setItem(res.docs.map(e=>({id:e.id,...e.data()}))))
     },[id])
     
-    console.log(item);
+    
+
     return (
         <div className="container">
             <div className="row">

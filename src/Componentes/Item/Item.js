@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const Item = ({item})=>{
     return (
-      
+      <>
       <div className="card border-secondary ">
-          <Link to={`item/${item.id}`}>
+          <Link to={`/item/${item.id}`}>
         <img src={item.imagen} className="card-img-top " alt="#"/>
         </Link>
         <div className="card-body text-bg-light">
@@ -20,7 +20,8 @@ const Item = ({item})=>{
           
         </div>
       </div>
-      
+        <br/>
+      </>
       
 
     )

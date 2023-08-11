@@ -21,7 +21,6 @@ function Menu() {
           <ul className="dropdown-menu">
             <li><NavLink className="dropdown-item" to={'/category/guitarraelectrica'}>Guitarras electricas</NavLink></li>
             <li><NavLink className="dropdown-item" to={'/category/guitarraacustica'}>Guitarras acusticas</NavLink></li>
-            <li><NavLink className="dropdown-item" to={'/category/accguitarra'}>Accesorios para guitarra</NavLink></li>
           </ul>
         </li>
         
@@ -32,7 +31,6 @@ function Menu() {
           <ul className="dropdown-menu">
             <li><NavLink className="dropdown-item" to={'/category/bajoelectrico'}>Bajos electricos</NavLink></li>
             <li><NavLink className="dropdown-item" to={'/category/bajoelectroacustico'}>Bajos electroacusticos</NavLink></li>
-            <li><NavLink className="dropdown-item" to={'/category/accbajo'}>Accesorios para bajo</NavLink></li>
           </ul>
         </li>
         <li className="nav-item dropdown">
@@ -41,8 +39,6 @@ function Menu() {
           </a>
           <ul className="dropdown-menu">
             <li><NavLink className="dropdown-item" to={'/category/bateria'}>Baterias</NavLink></li>
-            <li><NavLink className="dropdown-item" to={'/category/platillo'}>Platillos</NavLink></li>
-            <li><NavLink className="dropdown-item" to={'/category/percusion'}>Percusiones</NavLink></li>
           </ul>
         </li>
       </ul>

@@ -2,6 +2,9 @@
   text-align: center;
 }
 
+
+
+
 .margen{
   margin-left: 5px;
   flex-direction: row;
@@ -41,3 +44,5 @@
     transform: rotate(360deg);
   }
 }
+
+

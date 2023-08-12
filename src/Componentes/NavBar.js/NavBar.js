@@ -3,6 +3,7 @@ import { Link,NavLink } from 'react-router-dom';
 
 function Menu() {
     return (
+      <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
   <div className="container-fluid">
     <NavLink className="navbar-brand" to={'/'}>CuerdaLin</NavLink>
@@ -43,9 +44,11 @@ function Menu() {
         </li>
       </ul>
     </div>
-          <span className="navbar-brand mr-auto"><CarritoCompras/></span>
+          <span><NavLink className="navbar-brand mr-auto" to={'/carrito'}><CarritoCompras/></NavLink></span>
   </div>
 </nav>
+<br/>
+</>
     );
   }
   

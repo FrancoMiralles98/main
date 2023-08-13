@@ -40,6 +40,5 @@
    [checkout.js]: formulario para escribir los datos personales para finalizar la compra y si todos los datos se encuentran validos se finaliza la compra y se genera un codigo de seguimiento
 
    `Carrito`:
-   [Carrito.js]: 
     [CarritoDetail.js]: Se genera la cart del producto del carrito con todas sus funciones de agreagar sacar , el subtotal del la compra del producto, la imgane con link a la descripcion y la opcion de sacar el producto del carrito
     [Carrito.js]: Se obtiene los productos del carrito para iterarlos y pasarlos como prop y generar la cart, en el caso de haber objetos en el carrito, se habilitara la opcion del boton para redirigirse al checkput para finalizar la compra.

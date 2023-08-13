@@ -1,9 +1,12 @@
+import { useState } from "react"
 
 
 
 const Checkout = () =>{
 
-    let valor = false
+
+    let [valor,setValor] = useState(false)
+    
     let segimiento = 0
     let verificar = (e)=>{
         e.preventDefault()
@@ -22,7 +25,7 @@ const Checkout = () =>{
                     result += letter
             }
             segimiento = result
-            valor = true
+            setValor(true)
         }
     }
 

@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+## Descripcion de la pagina 
+ Es una pagina que se dedica a la venta de instrumentos musicales, principalmente a la venta de instrumentos con cuerda,
+ la idea era generar una pagina ecommerce en la que sea una manera facil a la hora de poder comprar un producto o querer informarse tambien (obvio que a esta la pagina le falta mucho)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Dependencias utilizadas
+ 
+ * Bootstap 5
+ * firebase
+ * react
+ * react-router-dom
 
-## Available Scripts
+## Carpetas y archivos
 
-In the project directory, you can run:
+` NavBar`:
+  [NavBar.js]: Se encuentra los menu desplegables de las diferntes categorias de cada producto, donde tambien esta los links respectivos,
+  [CarritoCompras.js]: Se encuentra el icono de compras del carrito y con el numero de productos comprados 
 
-### `npm start`
+`  ItemListContainer`:
+   [ItemListContainer.js]: Aca es donde se obtiene los productos de la base de datos (firebase) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`  ItemList`:
+   [ItemList.js]: Se itera todos los productos de la base de datos al archivo Item.js para realizar todas las carts
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`  Item`:
+   [Item.js]: Se arma toda la cart con sus respectivo boton para agregar al carro y su link en la imagen del producto para ver el detalle
 
-### `npm test`
+`  ItemDetailContainer`:
+   [ItemDetailContainer.js]: Se obtiene el producto de la base de datos mediante su id para luego generar la cart 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   `ItemDetail`:
+   [ItemDetail.js]: Se arma toda la cart y se agreaga las los eventos de agregar o restar la cantidad que desea comprar y agregarlo al carrito
 
-### `npm run build`
+   `Error`:
+   [Error404.js]: Archivo que se ejecutara cuando no se encuentra la direccion url especificada
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   `Context`:
+   [contextCarrito.js]: En este archivo se genera el context del carrito para utilizarlo en las demas capas, y tambien funciones propias del carrito para obtener cantidad de productos, valor total del carrito agreagar y sacar
+    
+`  checkout`:
+   [checkout.js]: formulario para escribir los datos personales para finalizar la compra y si todos los datos se encuentran validos se finaliza la compra y se genera un codigo de seguimiento
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   `Carrito`:
+   [Carrito.js]: 
+    [CarritoDetail.js]: Se genera la cart del producto del carrito con todas sus funciones de agreagar sacar , el subtotal del la compra del producto, la imgane con link a la descripcion y la opcion de sacar el producto del carrito
+    [Carrito.js]: Se obtiene los productos del carrito para iterarlos y pasarlos como prop y generar la cart, en el caso de haber objetos en el carrito, se habilitara la opcion del boton para redirigirse al checkput para finalizar la compra.

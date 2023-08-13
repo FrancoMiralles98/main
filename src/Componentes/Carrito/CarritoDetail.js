@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CarritoContext } from "../Context/contextCarrito";
 import { useState } from "react";
@@ -6,37 +6,52 @@ import { useState } from "react";
 
 const ItemCarrito = ({item})=>{
 
-let {sacarCarrito,sumCarrito,getTotal,quitar} = useContext(CarritoContext)
+let {cart,setCart} = useContext(CarritoContext)
 
     let [cantidad,setCantidad]= useState(item.cantidad)
     let [subtotal,setSubtotal]= useState(item.cantidad*item.precio)
 
 
-    let agregar = ()=>{
-        sumCarrito(item)
-        setCantidad((cantidad)=>{
-            if(cantidad == item.stock) return cantidad
-            return cantidad += 1
-        })
-        setSubtotal((subtotal)=>{
-            return  subtotal = cantidad * item.precio
-        })
-    }
+useEffect(()=>{
+    setSubtotal((subtotal)=>{
+        return subtotal = cantidad * item.precio
+    })
+    
+},[cantidad])
 
-    let sacar = ()=>{
-        sacarCarrito(item)
-        setCantidad((cantidad)=>{
-            if(cantidad == 1) return cantidad
-            return cantidad -= 1
+    
+let agregar = () =>{
+    setCantidad((cantidad)=>{
+        if(cantidad == item.stock){ return cantidad}
+        else{
+        let index = cart.indexOf(item)
+        setCart((cart)=>{
+            cart[index].cantidad =  cart[index].cantidad +1
+            return cart
         })
-        setSubtotal((subtotal)=>{
-            return  subtotal = cantidad * item.precio
+        return cantidad +1}
+    })
+}
+let sacar = () =>{
+    setCantidad((cantidad)=>{
+        if(cantidad == 1){return cantidad}
+        else{
+        let index = cart.indexOf(item)
+        setCart((cart)=>{
+            cart[index].cantidad =  cart[index].cantidad -1
+            return cart
         })
-    }
+        return cantidad -1}
+    })
+}
+let quitarProd = (item) =>{
 
-    let quitarProd = ()=>{
-        quitar(item)
-    }
+    setCart((cart)=>{
+        let index = cart.indexOf(item)
+        cart.splice(index,1)
+        return cart
+    })
+}
 
     
 

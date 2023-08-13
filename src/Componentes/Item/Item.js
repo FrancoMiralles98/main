@@ -10,7 +10,7 @@ let {sumCarrito} = useContext(CarritoContext)
 
   
 const AgreagarCarro = () =>{
-    sumCarrito(item)
+    sumCarrito({...item,cantidad:1})
 }
 
   return (

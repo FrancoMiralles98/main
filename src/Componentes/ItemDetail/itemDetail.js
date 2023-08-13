@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {tamaño}from'../ItemDetail/itemDetailCss.js'
 import { CarritoContext } from '../Context/contextCarrito.js'
 import { useContext } from 'react'
@@ -8,23 +8,25 @@ const ItemDetail = ({item})=>{
   let [contador,setContador] = useState(1)
   let {sumCarrito} = useContext(CarritoContext)
 
-  let agregarCarrito =()=>{
-    sumCarrito({...item,cantidad:contador})
-  }
+  
+    let sumar = () =>{
+      setContador((contador)=>{
+        if(contador == item.stock) return contador
+        return contador +1
+      })
+    }
+  
+    let restar = () =>{
+      setContador((contador)=>{
+        if(contador == 1) return contador
+        return contador-1
+      })
+    }
 
-  let sumar = ()=>{
-    setContador((contador)=>{
-      if(contador == item.stock) return contador
-      else{ return contador+1}
-    })
-  }
-
-  let restar = ()=>{
-    setContador((contador)=>{
-      if(contador == 1) return contador
-      else{return contador-1}
-    })
-  }
+    let agregarCarrito = ()  =>{
+      sumCarrito({...item,cantidad:contador})
+    }
+  
 
     return (
         <>

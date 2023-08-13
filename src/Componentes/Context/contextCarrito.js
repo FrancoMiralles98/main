@@ -33,7 +33,7 @@ import { createContext } from "react";
         setCart((cart)=>{
            let findItem = cart.findIndex(e=> e.id == item.id)
            if(findItem < 0){
-            return [...cart,{...item,cantidad:1}]
+            return [...cart,{...item}]
            }
            if(findItem > 0){
                 if(item.stock > item.cantidad){
@@ -57,15 +57,7 @@ import { createContext } from "react";
         })
     } 
     
-    let quitar = (item)=>{
-        setCart((cart)=>{
-            let prod = cart.findIndex(e=>e.id == item.id)
-            cart.splice(prod,1)
-            return cart
-        })
-        console.log(cart);
-    }
 
-    return <CarritoContext.Provider value={{cart,getCantidad,sumCarrito,getTotal,getCantidad,sacarCarrito,quitar}}>{children}</CarritoContext.Provider>
+    return <CarritoContext.Provider value={{cart,getCantidad,sumCarrito,getTotal,getCantidad,sacarCarrito,setCart}}>{children}</CarritoContext.Provider>
  }
 
